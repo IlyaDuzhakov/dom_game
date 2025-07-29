@@ -1,9 +1,6 @@
-
-
-let lastIndex = -1
+let lastIndex = -1;
 
 //добавляем функции чтобы было удобно работать с lastIndex в тестах
-
 
 //сбросить индекс до исходного
 
@@ -22,17 +19,16 @@ function setLastIndex(value) {
   lastIndex = value;
 }
 
-function getRandomIndex() {  // рекурсия
-    let number = Math.floor(Math.random() * 16);
-    if (number !== lastIndex) {
-        lastIndex = number
-        return number
-    }
-    else {
-        return getRandomIndex() // рекурсивный вызов функции - вызов функции внутри самой себя
-    }
-    // return number
+function getRandomIndex() {
+  // рекурсия
+  let number = Math.floor(Math.random() * 16);
+  if (number !== lastIndex) {
+    lastIndex = number;
+    return number;
+  } else {
+    return getRandomIndex(); // рекурсивный вызов функции - вызов функции внутри самой себя
+  }
+  // return number
 }
 
-
-module.exports = {getRandomIndex, resetLastIndex, getLastIndex, setLastIndex}
+module.exports = { getRandomIndex, resetLastIndex, getLastIndex, setLastIndex };
