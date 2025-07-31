@@ -19,16 +19,27 @@ function setLastIndex(value) {
   lastIndex = value;
 }
 
+// function getRandomIndex() {
+//   // рекурсия
+//   let number = Math.floor(Math.random() * 16);
+//   if (number !== lastIndex) {
+//     lastIndex = number;
+//     return number;
+//   } else {
+//     return getRandomIndex(); // рекурсивный вызов функции - вызов функции внутри самой себя
+//   }
+//   // return number
+// }
+
 function getRandomIndex() {
-  // рекурсия
-  let number = Math.floor(Math.random() * 16);
-  if (number !== lastIndex) {
+  let number;
+  do {
+    number = Math.floor(Math.random() * 16);
+  } while (number === lastIndex);
+  {
     lastIndex = number;
     return number;
-  } else {
-    return getRandomIndex(); // рекурсивный вызов функции - вызов функции внутри самой себя
   }
-  // return number
 }
 
 module.exports = { getRandomIndex, resetLastIndex, getLastIndex, setLastIndex };
