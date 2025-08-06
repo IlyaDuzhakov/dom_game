@@ -7,7 +7,7 @@ const renderBlocks = () => {
   for (let i = 0; i < 16; i += 1) {
     const div = document.createElement("div");
     div.classList.add("block");
-    blocksContainer.appendChild(div);
+    blocksContainer.append(div); // замена appendChild на append более современный метод
   }
 };
 renderBlocks();
